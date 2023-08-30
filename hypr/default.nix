@@ -1,7 +1,11 @@
 { config, lib, pkgs, ... }: {
 
+  imports = [
+    ./waybar.nix
+  ];
+
   home.packages = with pkgs; [
-    # waybar
+    swaybg
   ];
 
   wayland.windowManager.hyprland.extraConfig = ''
@@ -9,7 +13,7 @@
 
     # Execute your favorite apps at launch
     # exec-once = waybar & hyprpaper & firefox
-    exec-once = swaybg -i ~/Downloads/gruvbox-dark-blue.png
+    exec-once = swaybg -i ~/wallpapers/gruvbox-dark-blue.png
 
     # Source a file (multi-file configs)
     # source = ~/.config/hypr/myColors.conf
