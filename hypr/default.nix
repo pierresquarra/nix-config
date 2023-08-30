@@ -9,6 +9,7 @@
 
     # Execute your favorite apps at launch
     # exec-once = waybar & hyprpaper & firefox
+    exec-once = swaybg -i ~/Downloads/gruvbox-dark-blue.png
 
     # Source a file (multi-file configs)
     # source = ~/.config/hypr/myColors.conf
@@ -43,7 +44,7 @@
     }
 
     decoration {
-      rounding = 10
+      rounding = 5
 
       blur {
         enabled = true
@@ -55,6 +56,10 @@
       shadow_range = 4
       shadow_render_power = 3
       col.shadow = rgba(1a1a1aee)
+
+      active_opacity=0.94
+      inactive_opacity=0.84
+      fullscreen_opacity=1.0
     }
 
     animations {
