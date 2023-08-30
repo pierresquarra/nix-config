@@ -35,6 +35,12 @@
       # Utils
       unzip
 
+      # Audio
+      pavucontrol
+
+      # Network
+      networkmanagerapplet
+
       (nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
 
       # # You can also create simple shell scripts directly inside your
