@@ -23,6 +23,7 @@
       #clock,
       #backlight,
       #network,
+      #bluetooth,
       #pulseaudio,
       #battery,
       #tray,
@@ -41,7 +42,7 @@
 
       modules-left = [ "wlr/workspaces" ];
       modules-center = [ "clock" ];
-      modules-right = [ "backlight" "network" "pulseaudio" "battery" "tray" "custom/wlogout" ];
+      modules-right = [ "backlight" "network" "bluetooth" "pulseaudio" "battery" "tray" "custom/wlogout" ];
 
       "wlr/workspaces" = {
         disable-scroll = true;
@@ -75,6 +76,13 @@
   	tooltip-format-ethernet = "{ifname} ";
   	tooltip-format-disconnected = "Disconnected";
 	on-click = "nm-connection-editor";
+      };
+      "bluetooth" = {
+  	format = "";
+  	format-connected = " {device_alias}";
+  	tooltip-format = "{controller_alias}\t{controller_address}\n\n{num_connections} connected";
+  	tooltip-format-connected = "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}";
+	on-click = "blueman-manager"; 
       };
       "pulseaudio" = {
         format = "{icon}";
