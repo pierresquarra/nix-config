@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 
 {
+  nixpkgs.config.allowUnfreePredicate = (pkg: true);
 
   imports = [
     ./hypr
@@ -15,9 +16,13 @@
     packages = with pkgs; [
       kitty
       wofi
-      dolphin
       dunst
       firefox
+      vscode
+      obsidian
+      discord
+
+      xfce.thunar
 
       # # It is sometimes useful to fine-tune packages, for example, by applying
       # # overrides. You can do that directly here, just don't forget the
@@ -70,6 +75,7 @@
     userEmail = "pierre@squarra.de";
   };
 
+  # Kitty
   programs.kitty = {
     enable = true;
 

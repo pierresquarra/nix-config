@@ -93,7 +93,7 @@
     bind = $mainMod, RETURN, exec, kitty
     bind = $mainMod, Q, killactive,
     bind = $mainMod, M, exit,
-    bind = $mainMod, E, exec, dolphin
+    bind = $mainMod, E, exec, thunar
     bind = $mainMod, V, togglefloating,
     bind = $mainMod, R, exec, wofi --show drun
     bind = $mainMod, P, pseudo, # dwindle

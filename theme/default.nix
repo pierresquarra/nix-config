@@ -15,8 +15,8 @@
     };
 
     iconTheme = {
-      package = pkgs.gruvbox-dark-gtk;
-      name = "gruvbox-dark-icons-gtk";
+      package = pkgs.gruvbox-dark-icons-gtk;
+      name = "gruvbox-dark";
     };
   };
 
@@ -27,9 +27,10 @@
     platformTheme = "gtk";
 
     style = {
-      package = pkgs.adwaita-qt;
-      name = "adwaita-dark";
+      package = pkgs.gruvbox-dark-gtk;
+      name = "gruvbox-dark";
     };
+
   };
 
 }
