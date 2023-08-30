@@ -12,8 +12,8 @@
     monitor=,preferred,auto,auto
 
     # Execute your favorite apps at launch
-    # exec-once = waybar & hyprpaper & firefox
     exec-once = swaybg -i ~/wallpapers/gruvbox-dark-blue.png
+    exec-once = waybar
 
     # Source a file (multi-file configs)
     # source = ~/.config/hypr/myColors.conf
