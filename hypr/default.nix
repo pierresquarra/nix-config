@@ -90,8 +90,8 @@
 
     $mainMod = SUPER
 
-    bind = $mainMod, Q, exec, kitty
-    bind = $mainMod, C, killactive,
+    bind = $mainMod, RETURN, exec, kitty
+    bind = $mainMod, Q, killactive,
     bind = $mainMod, M, exit,
     bind = $mainMod, E, exec, dolphin
     bind = $mainMod, V, togglefloating,

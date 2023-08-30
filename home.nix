@@ -4,6 +4,7 @@
 
   imports = [
     ./hypr
+    ./theme
   ];
 
   home = {
@@ -62,10 +63,22 @@
     };
   };
 
+  # Git
   programs.git = {
     enable = true;
     userName = "pierresquarra";
     userEmail = "pierre@squarra.de";
+  };
+
+  programs.kitty = {
+    enable = true;
+
+    font = {
+      package = pkgs.jetbrains-mono;
+      name = "jetbrains-mono";
+    };
+
+    theme = "Gruvbox Material Dark Hard";
   };
 
   # Let Home Manager install and manage itself.
