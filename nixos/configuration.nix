@@ -10,14 +10,6 @@
       ./hardware-configuration.nix
     ];
 
-  programs.hyprland = {
-    enable = true;
-    xwayland = {
-      enable = true;
-      hidpi = true;
-    };
-  };
-
   # Bootloader.
   boot.loader = {
     systemd-boot = {
@@ -27,10 +19,11 @@
     efi.canTouchEfiVariables = true;
   };
 
-  networking.hostName = "nixos"; # Define your hostname.
-
-  # Enable networking
-  networking.networkmanager.enable = true;
+  # Networking
+  networking = {
+    hostName = "nixos";
+    networkmanager.enable = true;
+  };
 
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
@@ -50,14 +43,16 @@
     LC_TIME = "de_DE.UTF-8";
   };
 
-  # Configure keymap in X11
-  services.xserver = {
+  # Greetd
+  services.greetd = {
     enable = true;
-    layout = "de";
-    xkbVariant = "";
-    displayManager.gdm = {
-      enable = true;
-      wayland = true;
+    restart = true;
+    settings = rec {
+      initial_session = {
+        command = "Hyprland";
+        user = "pierre";
+      };
+      default_session = initial_session;
     };
   };
 
@@ -109,6 +104,7 @@
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
 
+  # Thunar
   services.gvfs.enable = true; # Mount, trash, and other functionalities
   services.tumbler.enable = true; # Thumbnail support for images
 
