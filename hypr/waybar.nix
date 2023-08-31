@@ -17,9 +17,13 @@
 	font-family: FontAwesome, Jetbrains Mono, Helvetica, Arial, sans-serif;
 	font-size: 13px;
       }
+      window#waybar {
+       background: none;
+      }
       #workspaces button {
         padding: 0 8px;
       }
+      #workspaces,
       #clock,
       #backlight,
       #network,
@@ -28,20 +32,19 @@
       #battery,
       #tray,
       #custom-wlogout {
-        padding: 0 10px;
+        background: #32302f;
+	padding: 4px 8px;
+	margin: 4px;
+	border-radius: 4px;
       }
     '';
 
     settings.mainBar = {
       layer = "top";
       position = "top";
-      height = 30;
-      spacing = 5;
-      margin-left = 10;
-      margin-right = 10;
 
-      modules-left = [ "wlr/workspaces" ];
-      modules-center = [ "clock" ];
+      modules-left = [ "clock" "wlr/workspaces" ];
+      modules-center = [ ];
       modules-right = [ "backlight" "network" "bluetooth" "pulseaudio" "battery" "tray" "custom/wlogout" ];
 
       "wlr/workspaces" = {
@@ -50,8 +53,8 @@
         on-click = "activate";
 	format = "{icon}";
 	format-icons = {
-  	  active = "";
-	  default = "";
+  	  active = " ";
+	  default = " ";
   	};
       };
       "clock" = {
@@ -61,16 +64,16 @@
   	tooltip-format = "{:%d-%m-%Y}";
       };
       "backlight" = {
-  	format = "{icon}";
-  	format-icons = ["" ""];
+  	format = "{icon}{percent}%";
+  	format-icons = [" " " "];
 	tooltip = true;
 	tooltip-format = "Backlight: {percent}%";
       };
       "network" = {
   	format = "{ifname}";
-  	format-wifi = "";
-  	format-ethernet = "";
-  	format-disconnected = "";
+  	format-wifi = " {essid}";
+  	format-ethernet = " {essid}";
+  	format-disconnected = " ";
   	tooltip-format = "{ifname}";
   	tooltip-format-wifi = "{essid} ({signalStrength}%) ";
   	tooltip-format-ethernet = "{ifname} ";
@@ -85,20 +88,21 @@
 	on-click = "blueman-manager"; 
       };
       "pulseaudio" = {
-        format = "{icon}";
+        format = "{icon} {volume}%";
   	format-muted = "";
   	format-icons = {
-  	  headphones = "";
-  	  handsfree = "";
-	  headset = "";
-	    phone = "";
-	    portable = "";
-	    car = "";
-	    default = ["" ""];
+  	  headphones = " ";
+  	  handsfree = " ";
+	  headset = " ";
+	    phone = " ";
+	    portable = " ";
+	    car = " ";
+	    default = ["" " "];
   	};
   	scroll-step = 1;
 	tooltip = true;
 	tooltip-format = "{volume}% {desc}";
+	max-length = 30;
   	on-click = "pavucontrol";
       };
       "battery" = {
@@ -107,8 +111,8 @@
 	  warning = 30;
   	  critical = 15;
   	};
-	format = "{icon}";
-  	format-icons = ["" "" "" "" ""];
+	format = "{icon} {capacity}%";
+  	format-icons = [" " " " " " " " " "];
 	tooltip = true;
 	tooltip-format = "{capacity}%";
       };
@@ -117,7 +121,7 @@
   	spacing = 10;
       };
       "custom/wlogout" = {
-        format = "";
+        format = " ";
         interval = "once";
         on-click = "wlogout -c 5 -r 5 -p layer-shell";
       };
