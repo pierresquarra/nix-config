@@ -14,7 +14,7 @@
   boot.loader = {
     systemd-boot = {
       enable = true;
-      configurationLimit = 5;
+      configurationLimit = 8;
     };
     efi.canTouchEfiVariables = true;
   };
@@ -55,6 +55,8 @@
       default_session = initial_session;
     };
   };
+
+  services.xserver.enable = true;
 
   # Configure console keymap
   console.keyMap = "de";

@@ -31,6 +31,8 @@
       obsidian
       discord
       xfce.thunar
+      neofetch
+      spotify
 
       # Utils
       unzip
