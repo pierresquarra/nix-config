@@ -15,8 +15,8 @@
     };
 
     iconTheme = {
-      package = pkgs.gruvbox-dark-icons-gtk;
-      name = "gruvbox-dark";
+      package = pkgs.papirus-icon-theme;
+      name = "Papirus-Dark";
     };
 
     gtk3 = {
@@ -35,14 +35,7 @@
   # Qt
   qt = {
     enable = true;
-
     platformTheme = "gtk";
-
-    style = {
-      package = pkgs.gruvbox-dark-gtk;
-      name = "gruvbox-dark";
-    };
-
   };
 
 }

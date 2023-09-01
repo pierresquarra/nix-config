@@ -44,11 +44,11 @@
       layer = "top";
       position = "top";
 
-      modules-left = [ "clock" "wlr/workspaces" "hyprland/window" ];
+      modules-left = [ "clock" "hyprland/workspaces" "hyprland/window" ];
       modules-center = [ ];
       modules-right = [ "backlight" "network" "bluetooth" "pulseaudio" "battery" "tray" "custom/wlogout" ];
 
-      "wlr/workspaces" = {
+      "hyprland/workspaces" = {
         disable-scroll = true;
         all-outputs = true;
         on-click = "activate";

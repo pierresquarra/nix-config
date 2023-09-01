@@ -34,6 +34,11 @@
       spotify
       vscode
 
+      # Gnome
+      dconf
+      gnome-photos
+      gnome.evince
+
       # Utils
       unzip
 
@@ -43,7 +48,7 @@
       # Network
       networkmanagerapplet
 
-      (nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
+      (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
 
       # # You can also create simple shell scripts directly inside your
       # # configuration. For example, this adds a command 'my-hello' to your
@@ -80,6 +85,7 @@
     # if you don't want to manage your shell through Home Manager.
     sessionVariables = {
       # EDITOR = "emacs";
+      GTK_THEME = "Grubox-Material-Dark-Hard";
     };
   };
 
@@ -100,6 +106,13 @@
     };
 
     theme = "Gruvbox Material Dark Hard";
+  };
+
+  # Gnome
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+    };
   };
 
   # Let Home Manager install and manage itself.
