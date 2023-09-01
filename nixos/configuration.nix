@@ -43,20 +43,25 @@
     LC_TIME = "de_DE.UTF-8";
   };
 
-  # Greetd
-  services.greetd = {
+  # Configure keymap in X11
+  services.xserver = {
     enable = true;
-    restart = true;
-    settings = rec {
-      initial_session = {
-        command = "Hyprland";
-        user = "pierre";
-      };
-      default_session = initial_session;
+    layout = "de";
+    xkbVariant = "";
+    displayManager.gdm = {
+      enable = true;
+      wayland = true;
     };
   };
 
-  services.xserver.enable = true;
+  # Hyprland
+  programs.hyprland = {
+    enable = true;
+    xwayland = {
+      enable = true;
+      hidpi = true;
+    };
+  };
 
   # Configure console keymap
   console.keyMap = "de";

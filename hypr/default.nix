@@ -14,7 +14,13 @@
   };
 
   wayland.windowManager.hyprland.extraConfig = ''
-    monitor=,preferred,auto,auto
+    monitor = ,preferred,auto,auto
+
+    # Fix scaling issue
+    xwayland {
+      force_zero_scaling = true
+    }
+    env = GDK_SCALE,1.5
 
     # Execute your favorite apps at launch
     exec-once = swaybg -i ~/wallpapers/gruvbox-dark-blue.png
@@ -22,9 +28,6 @@
 
     # Source a file (multi-file configs)
     # source = ~/.config/hypr/myColors.conf
-
-    # Some default env vars.
-    env = XCURSOR_SIZE,24
 
     input {
       kb_layout = de
