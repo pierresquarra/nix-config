@@ -1,5 +1,5 @@
 {
-  description = "Home Manager configuration of pierre";
+  description = "Home Manager configuration";
 
   inputs = {
     # Specify the source of Home Manager and Nixpkgs.
@@ -19,21 +19,22 @@
       pkgs = nixpkgs.legacyPackages.${system};
 
       config = { allowUnfree = true; };
-    in {
-      homeConfigurations."pierre" = home-manager.lib.homeManagerConfiguration {
+
+      personal = import ./personal.nix;
+    in 
+    {
+      homeConfigurations."${personal.username}" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
-        # Specify your home configuration modules here, for example,
-        # the path to your home.nix.
+        # Specify your home configuration modules here, for example, the path to your home.nix.
         modules = [
-	  ./home.nix
+          ./home.nix
+          
+          hyprland.homeManagerModules.default
+          {wayland.windowManager.hyprland.enable = true;}
+        ];
 
-	  hyprland.homeManagerModules.default
-	  {wayland.windowManager.hyprland.enable = true;}
-	];
-
-        # Optionally use extraSpecialArgs
-        # to pass through arguments to home.nix
+        # Optionally use extraSpecialArgs to pass through arguments to home.nix
       };
     };
 }

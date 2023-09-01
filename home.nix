@@ -1,4 +1,8 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, ... }: 
+let
+  personal = import ./personal.nix;
+in
+{
 
   nixpkgs.config.allowUnfreePredicate = (pkg: true);
   fonts.fontconfig.enable = true;
@@ -16,12 +20,11 @@
   ];
 
   home = {
-    username = "pierre";
-    homeDirectory = "/home/pierre";
+    username = "${personal.username}";
+    homeDirectory = "/home/${personal.username}";
     stateVersion = "23.05";
 
     packages = with pkgs; [
-      kitty
       wofi
       dunst
       firefox
@@ -31,8 +34,6 @@
       neofetch
       spotify
       vscode
-
-      zathura
 
       # Utils
       unzip
@@ -86,32 +87,6 @@
     sessionVariables = {
       # EDITOR = "emacs";
       GTK_THEME = "Grubox-Material-Dark-Hard";
-    };
-  };
-
-  # Git
-  programs.git = {
-    enable = true;
-    userName = "pierresquarra";
-    userEmail = "pierre@squarra.de";
-  };
-
-  # Kitty
-  programs.kitty = {
-    enable = true;
-
-    font = {
-      package = pkgs.jetbrains-mono;
-      name = "jetbrains-mono";
-    };
-
-    theme = "Gruvbox Material Dark Hard";
-  };
-
-  # Gnome
-  dconf.settings = {
-    "org/gnome/desktop/interface" = {
-      color-scheme = "prefer-dark";
     };
   };
 
