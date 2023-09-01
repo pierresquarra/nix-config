@@ -1,6 +1,5 @@
-{ config, pkgs, ... }:
+{ config, pkgs, ... }: {
 
-{
   nixpkgs.config.allowUnfreePredicate = (pkg: true);
   fonts.fontconfig.enable = true;
 
@@ -13,8 +12,7 @@
   ];
 
   imports = [
-    ./hypr
-    ./theme
+    ./programs
   ];
 
   home = {
@@ -41,13 +39,11 @@
 
       # Utils
       unzip
+      networkmanagerapplet
 
       # Audio
       pavucontrol
-
-      # Network
-      networkmanagerapplet
-
+      
       (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
 
       # # You can also create simple shell scripts directly inside your

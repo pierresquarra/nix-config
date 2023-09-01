@@ -1,8 +1,4 @@
-{ config, lib, pkgs, ... }: {
-
-  imports = [
-    ./waybar.nix
-  ];
+{ config, pkgs, ... }: {
 
   home.packages = with pkgs; [
     swaybg
