@@ -1,4 +1,9 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, ... }: 
+let
+  personal = import ../personal.nix;
+  colors = import ../colors.nix;
+in
+{
   
   home.packages = with pkgs; [
     waybar
@@ -7,6 +12,50 @@
 
   programs.wlogout = {
     enable = true;
+
+    style = ''
+    window {
+      background-color: rgba(${colors.bg-dark-rgb}, 0.5);
+    }
+
+    button {
+      color: ${colors.fg-hex};
+      background-color: ${colors.bg-dark-hex};
+      border: 2px solid ${colors.bg-dark-hex};
+      border-radius: 4px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 25%;
+    }
+    button:focus, button:active, button:hover {
+      outline-style: none;
+      border: 2px solid ${colors.fg-hex};
+    }
+    
+    #lock {
+      background-image: image(url("/home/${personal.username}/.config/home-manager/assets/wlogout/lock.png"), url("/usr/local/share/wlogout/icons/lock.png"));
+    }
+
+    #logout {
+      background-image: image(url("/home/${personal.username}/.config/home-manager/assets/wlogout/logout.png"), url("/usr/local/share/wlogout/icons/logout.png"));
+    }
+
+    #suspend {
+      background-image: image(url("/home/${personal.username}/.config/home-manager/assets/wlogout/suspend.png"), url("/usr/local/share/wlogout/icons/suspend.png"));
+    }
+
+    #hibernate {
+      background-image: image(url("/home/${personal.username}/.config/home-manager/assets/wlogout/hibernate.png"), url("/usr/local/share/wlogout/icons/hibernate.png"));
+    }
+
+    #shutdown {
+      background-image: image(url("/home/${personal.username}/.config/home-manager/assets/wlogout/shutdown.png"), url("/usr/local/share/wlogout/icons/shutdown.png"));
+    }
+
+    #reboot {
+        background-image: image(url("/home/${personal.username}/.config/home-manager/assets/wlogout/restart.png"), url("/usr/local/share/wlogout/icons/reboot.png"));
+    }
+    '';
   };
 
   programs.waybar = {
@@ -33,7 +82,8 @@
       #battery,
       #tray,
       #custom-wlogout {
-        background: #32302f;
+        background: ${colors.bg-light-hex};
+        color: ${colors.fg-hex};
         padding: 4px 8px;
         margin: 4px;
         border-radius: 4px;

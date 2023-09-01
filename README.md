@@ -55,3 +55,7 @@ home-manager switch
 ![Image](./screenshots/second.png)
 
 ![Image](./screenshots/third.png)
+
+## Issues
+
+When using my wlogout configurations, you are goig to run into some issues. You have to adjust the path to the icons io the `waybar.nix` file. It is set to my user directory. I work on setting this dynamically.
