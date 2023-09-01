@@ -1,9 +1,11 @@
 {
-    # Named accoding to https://github.com/jmattheis/gruvbox-dark-gtk/blob/master/gtk-3.20/dist/gtk-dark.css
+    # Named accoding to https://github.com/morhetz/gruvbox
 
-    bg-dark-hex = "#282828";
-    bg-dark-rgb = "40, 40, 40";
-    fg-hex = "#bdae93";
-    fg-rgb = "186, 222, 147";
-    bg-light-hex = "#3c3836";
+    bg-hex = "#282828";
+    bg-rgb = "40, 40, 40";
+    bg0-hex = "#1d2021";
+    fg-hex = "#ebdbb2";
+    fg-rgb = "235, 219, 178";
+    bg1-hex = "#3c3836";
+    blue1-hex = "#83a598";
 }

@@ -15,13 +15,13 @@ in
 
     style = ''
     window {
-      background-color: rgba(${colors.bg-dark-rgb}, 0.5);
+      background-color: rgba(${colors.bg-rgb}, 0.5);
     }
 
     button {
       color: ${colors.fg-hex};
-      background-color: ${colors.bg-dark-hex};
-      border: 2px solid ${colors.bg-dark-hex};
+      background-color: ${colors.bg0-hex};
+      border: 2px solid ${colors.bg0-hex};
       border-radius: 4px;
       background-repeat: no-repeat;
       background-position: center;
@@ -29,7 +29,7 @@ in
     }
     button:focus, button:active, button:hover {
       outline-style: none;
-      border: 2px solid ${colors.fg-hex};
+      border: 2px solid ${colors.blue1-hex};
     }
     
     #lock {
@@ -82,7 +82,7 @@ in
       #battery,
       #tray,
       #custom-wlogout {
-        background: ${colors.bg-light-hex};
+        background: ${colors.bg1-hex};
         color: ${colors.fg-hex};
         padding: 4px 8px;
         margin: 4px;
