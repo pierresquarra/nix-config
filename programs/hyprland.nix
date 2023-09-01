@@ -19,7 +19,7 @@
     env = GDK_SCALE,1.5
 
     # Execute apps at launch
-    exec-once = swaybg -i ~/wallpapers/gruvbox-dark-blue.png
+    exec-once = swaybg -i ~/pictures/wallpapers/gruvbox-dark-blue.png
     exec-once = waybar
 
     # Source a file (multi-file configs)
@@ -105,6 +105,7 @@
     bind = $mainMod, T, togglefloating
     bind = $mainMod, E, exec, thunar
     bind = $mainMod, SPACE, exec, wofi --show drun
+    bind = $mainMod, S, exec, grim -g "$(slurp)" - | convert - -shave 1x1 ~/pictures/screenshots/screenshot_$(date +\%Y-\%m-\%d_\%H-\%M).png
 
     # Move focus with mainMod + vim keys
     bind = $mainMod, H, movefocus, l

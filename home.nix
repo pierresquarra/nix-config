@@ -32,14 +32,18 @@
       spotify
       vscode
 
-      # Gnome
-      dconf
-      gnome-photos
-      gnome.evince
+      zathura
 
       # Utils
       unzip
       networkmanagerapplet
+      imv # Image viewer
+      zathura # PDF viewer
+
+      # Screenshots
+      imagemagick
+      grim
+      slurp 
 
       # Audio
       pavucontrol
