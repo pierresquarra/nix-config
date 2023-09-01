@@ -45,8 +45,8 @@
       gaps_in = 4
       gaps_out = 8
       border_size = 2
-      col.active_border = rgba(83A598ff) rgba(83A59800) 45deg
-      col.inactive_border = rgba(83A59800)
+      col.active_border = rgb(83A598) rgb(282828) rgb(282828) rgb(83A598) 45deg
+      col.inactive_border = rgb(282828)
 
       layout = dwindle
     }
@@ -64,6 +64,9 @@
       shadow_range = 4
       shadow_render_power = 3
       col.shadow = rgba(1a1a1aee)
+
+      active_opacity = 0.95
+      inactive_opacity = 0.85
     }
 
     animations {

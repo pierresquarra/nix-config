@@ -40,6 +40,18 @@ When applying changes to my user configuration I run:
 home-manager switch
 ```
 
+## Keybindings
+
+- **Super + Return**: Open terminal
+- **Super + Space**: Open launcher
+- **Super + E**: Open file manager
+- **Super + Q**: Close window
+- **Super + S**: Take screenshot
+
 ## Screenshots
 
-I'm working on it.
+![Image](./screenshots/first.png)
+
+![Image](./screenshots/second.png)
+
+![Image](./screenshots/third.png)

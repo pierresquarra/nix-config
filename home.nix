@@ -33,7 +33,11 @@ in
       xfce.thunar
       neofetch
       spotify
+
+      # Development
       vscode
+      nodejs
+      filezilla
 
       # Utils
       unzip
@@ -85,8 +89,8 @@ in
     #
     # if you don't want to manage your shell through Home Manager.
     sessionVariables = {
-      # EDITOR = "emacs";
-      GTK_THEME = "Grubox-Material-Dark-Hard";
+      EDITOR = "code";
+      GTK_THEME = "Grubox-dark";
     };
   };
 
