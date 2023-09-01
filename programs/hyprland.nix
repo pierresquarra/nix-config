@@ -100,19 +100,17 @@
     $mainMod = SUPER
 
     bind = $mainMod, RETURN, exec, kitty
-    bind = $mainMod, Q, killactive,
-    bind = $mainMod, M, exit,
+    bind = $mainMod, Q, killactive
+    bind = $mainMod, F, fullscreen
+    bind = $mainMod, T, togglefloating
     bind = $mainMod, E, exec, thunar
-    bind = $mainMod, V, togglefloating,
-    bind = $mainMod, R, exec, wofi --show drun
-    bind = $mainMod, P, pseudo, # dwindle
-    bind = $mainMod, J, togglesplit, # dwindle
+    bind = $mainMod, SPACE, exec, wofi --show drun
 
-    # Move focus with mainMod + arrow keys
-    bind = $mainMod, left, movefocus, l
-    bind = $mainMod, right, movefocus, r
-    bind = $mainMod, up, movefocus, u
-    bind = $mainMod, down, movefocus, d
+    # Move focus with mainMod + vim keys
+    bind = $mainMod, H, movefocus, l
+    bind = $mainMod, L, movefocus, r
+    bind = $mainMod, K, movefocus, u
+    bind = $mainMod, J, movefocus, d
     
     # Switch workspaces with mainMod + [0-9]
     bind = $mainMod, 1, workspace, 1
