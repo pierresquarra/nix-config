@@ -22,7 +22,7 @@
     }
     env = GDK_SCALE,1.5
 
-    # Execute your favorite apps at launch
+    # Execute apps at launch
     exec-once = swaybg -i ~/wallpapers/gruvbox-dark-blue.png
     exec-once = waybar
 

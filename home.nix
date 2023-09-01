@@ -27,12 +27,12 @@
       wofi
       dunst
       firefox
-      vscode
       obsidian
       discord
       xfce.thunar
       neofetch
       spotify
+      vscode
 
       # Utils
       unzip
