@@ -25,16 +25,42 @@ in
       enable = true;
       settings = {
         show = "drun";
-	allow_images = true;
-	width = "25%";
-	height = "25%";
-	no_actions = true;
-	prompt = "";
+        allow_images = true;
+        width = "25%";
+        height = "25%";
+        no_actions = true;
+        prompt = "";
       };
       style = ''
         window {
-	  border-radius: 4px;
-	}
+          border-radius: 4px;
+        }
       '';
+    };
+
+    # Dunst
+    services.dunst = {
+      enable = true;
+      iconTheme = {
+        package = pkgs.papirus-icon-theme;
+        name = "Papirus-Dark";
+        size = "32x32";
+      };
+      settings = {
+        global = {
+          width = 300;
+          height = 300;
+          offset = "30x50";
+          origin = "top-right";
+          transparency = 10;
+          frame_color = "${colors.bg-hex}";
+          font = "DejaVu Sans";
+        };
+        urgency_normal = {
+          background = "#37474f";
+          foreground = "#eceff1";
+          timeout = 10;
+        };
+      };
     };
 }
