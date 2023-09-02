@@ -6,8 +6,8 @@ in
 
   programs.git = {
     enable = true;
-    userName = "${personal.gitusername}";
-    userEmail = "${personal.gitemail}";
+    userName = "${personal.git.username}";
+    userEmail = "${personal.git.email}";
   };
 
 }
