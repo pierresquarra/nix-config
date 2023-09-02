@@ -5,8 +5,8 @@
     enable = true;
 
     font = {
-      package = pkgs.jetbrains-mono;
-      name = "JetBrains Mono Bold";
+      package = pkgs.dejavu_fonts;
+      name = "DejaVu Sans";
     };
 
     theme = {

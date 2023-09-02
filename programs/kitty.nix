@@ -4,8 +4,8 @@
     enable = true;
 
     font = {
-      package = pkgs.nerdfonts;
-      name = "JetBrainsMono";
+      package = pkgs.dejavu_fonts;
+      name = "DejaVu Sans";
     };
 
     theme = "Gruvbox Dark Hard";
