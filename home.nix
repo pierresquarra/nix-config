@@ -26,9 +26,9 @@ in
     stateVersion = "23.05";
 
     packages = with pkgs; [
-      wofi
       dunst
       firefox
+      chromium
       obsidian
       discord
       xfce.thunar

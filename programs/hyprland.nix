@@ -10,6 +10,8 @@
   };
 
   wayland.windowManager.hyprland.extraConfig = ''
+    monitor = eDP-1, 1920x1080, auto, 1.5
+    monitor = DP-2, 1920x1080, auto, 1
     monitor = ,preferred,auto,auto
 
     # Fix scaling issue
@@ -107,7 +109,7 @@
     bind = $mainMod, F, fullscreen
     bind = $mainMod, T, togglefloating
     bind = $mainMod, E, exec, thunar
-    bind = $mainMod, SPACE, exec, wofi --show drun
+    bind = $mainMod, SPACE, exec, wofi
     bind = $mainMod, S, exec, grim -g "$(slurp)" - | convert - -shave 1x1 ~/pictures/screenshots/screenshot_$(date +\%Y-\%m-\%d_\%H-\%M).png
 
     # Move focus with mainMod + vim keys

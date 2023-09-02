@@ -19,4 +19,22 @@ in
             options.background = "${colors.bg0-hex}";
         };
     };
+
+    # Wofi
+    programs.wofi = {
+      enable = true;
+      settings = {
+        show = "drun";
+	allow_images = true;
+	width = "25%";
+	height = "25%";
+	no_actions = true;
+	prompt = "";
+      };
+      style = ''
+        window {
+	  border-radius: 4px;
+	}
+      '';
+    };
 }
