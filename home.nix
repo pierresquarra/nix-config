@@ -33,7 +33,6 @@ in
       discord
       xfce.thunar
       neofetch
-      spotify
 
       # Development
       vscode

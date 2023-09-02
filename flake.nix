@@ -11,9 +11,11 @@
     };
 
     hyprland.url = "github:hyprwm/Hyprland";
+
+    spicetify-nix.url = github:the-argus/spicetify-nix;
   };
 
-  outputs = { nixpkgs, home-manager, hyprland, ... }:
+  outputs = { nixpkgs, home-manager, hyprland, spicetify-nix, ... }:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -32,9 +34,12 @@
           
           hyprland.homeManagerModules.default
           {wayland.windowManager.hyprland.enable = true;}
+
+          ./programs/spicetify.nix
         ];
 
         # Optionally use extraSpecialArgs to pass through arguments to home.nix
+        extraSpecialArgs = { inherit spicetify-nix;};
       };
     };
 }

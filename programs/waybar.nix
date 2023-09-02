@@ -63,7 +63,7 @@ in
 
     style = ''
       * {
-        font-family: FontAwesome, Jetbrains Mono, Helvetica, Arial, sans-serif;
+        font-family: FontAwesome, DejaVu Sans, Helvetica, Arial, sans-serif;
         font-size: 13px;
       }
       window#waybar {
