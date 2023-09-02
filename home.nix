@@ -1,6 +1,7 @@
 { config, pkgs, ... }: 
 let
   personal = import ./personal.nix;
+  colors = import ./colors.nix;
 in
 {
 
@@ -42,8 +43,6 @@ in
       # Utils
       unzip
       networkmanagerapplet
-      imv # Image viewer
-      zathura # PDF viewer
 
       # Screenshots
       imagemagick
@@ -53,8 +52,6 @@ in
       # Audio
       pavucontrol
       
-      (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-
       # # You can also create simple shell scripts directly inside your
       # # configuration. For example, this adds a command 'my-hello' to your
       # # environment:
