@@ -6,12 +6,12 @@
 
     font = {
       package = pkgs.jetbrains-mono;
-      name = "jetbrains-mono";
+      name = "JetBrains Mono Bold";
     };
 
     theme = {
-      package = pkgs.gruvbox-dark-gtk;
-      name = "gruvbox-dark";
+      package = pkgs.gruvbox-gtk-theme;
+      name = "Gruvbox-Dark-BL";
     };
 
     iconTheme = {

@@ -4,11 +4,11 @@
     enable = true;
 
     font = {
-      package = pkgs.jetbrains-mono;
-      name = "jetbrains-mono";
+      package = pkgs.nerdfonts;
+      name = "JetBrainsMono";
     };
 
-    theme = "Gruvbox Material Dark Hard";
+    theme = "Gruvbox Dark Hard";
   };
 
 }
