@@ -5,7 +5,9 @@ let
 in
 {
 
-  nixpkgs.config.allowUnfreePredicate = (pkg: true);
+  nixpkgs.config = {
+    allowUnfreePredicate = (pkg: true);
+  };
   fonts.fontconfig.enable = true;
 
   nixpkgs.overlays = [
@@ -34,9 +36,11 @@ in
       neofetch
 
       # Development
+      python3
       vscode
       nodejs
       filezilla
+      jetbrains.pycharm-professional
 
       # Utils
       unzip

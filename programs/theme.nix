@@ -19,6 +19,11 @@
       name = "Papirus-Dark";
     };
 
+    cursorTheme = {
+      package = pkgs.capitaine-cursors-themed;
+      name = "Capitaine Cursors (Gruvbox)";
+    };
+
     gtk3 = {
       extraConfig = {
         gtk-application-prefer-dark-theme = 1;

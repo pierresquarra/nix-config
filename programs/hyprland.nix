@@ -37,7 +37,7 @@
       follow_mouse = 1
 
       touchpad {
-        natural_scroll = false
+        natural_scroll = true
       }
 
       sensitivity = 0
@@ -68,7 +68,7 @@
       col.shadow = rgba(1a1a1aee)
 
       active_opacity = 0.95
-      inactive_opacity = 0.85
+      inactive_opacity = 0.9
     }
 
     animations {
